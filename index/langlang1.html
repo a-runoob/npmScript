@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/langlang.css" />
+        <script src="http://cdn.ronghub.com/RongIMLib-2.3.5.min.js"></script> 
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://cdn.ronghub.com/RongEmoji-2.2.7.min.js"></script>
+        <link rel="stylesheet" href="css/mui.min.css">
+        <script src="js/langlang1.js"></script>
+	</head>
+	<body>
+        <div class="outer">
+            <div class="chatList"> 
+            </div>
+        </div>        
+	</body>
+	<script>
+        var user={
+            id:'2',
+            name:'小明',
+            portrait:'http://img3.duitang.com/uploads/item/201511/23/20151123134647_dC5iA.thumb.700_0.jpeg',
+            token:'qFmmFLn10DAjsEw3XvFVxhb5pc4/yDlAwe02uGw8PSXGoY16tlf9kFlaoBAXGb2VGxR5RQCdGH8Y0vj/nJwY6w=='
+            // targetId:'3',
+            // name:'郎朗',
+            // portrait:'http://pic2.orsoon.com/2017/0226/20170226092757555.jpg',
+        }
+        RongCloud.user=user;
+        //连接服务器
+        RongCloud.connectServer();
+        //监听连接服务器状态
+        RongCloud.listenConnectStatus();
+        //监听消息
+        RongCloud.listenMessage();
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
+        $(window).resize(function() {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
+        })
+		//自动热更新
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>');
+	</script>
+</html>

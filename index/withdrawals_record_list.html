@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>提现记录</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="revenue_details_list">
+		<div class="tab_card">
+			<div class="tab_header">
+				<div class="tab_btn active" data-tab="1">
+					奖金提现
+				</div>
+				<div class="tab_btn" data-tab="2">
+					钻石提现
+				</div>
+			</div>
+			<div class="tab_content_box">
+				<div class="tab_content">
+					<div class="list_data">
+						<div class="item_data item_data2">
+							<div class="left">
+								<p class="w_time">2019-01-15 12:00</p>
+							</div>
+							<div class="right">
+								<p class="price">-150</p>
+								<p class="type">提现成功</p>
+							</div>
+						</div>
+						<div class="item_data item_data2 false">
+							<div class="left">
+								<p class="w_time">2019-01-15 12:00</p>
+							</div>
+							<div class="right">
+								<p class="price">-150</p>
+								<p class="type">审核中</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab_content tab_content2">
+					<div class="list_data">
+						<div class="item_data">
+							<div class="left">
+								<p class="w_time">2019-01-15 12:00</p>
+							</div>
+							<div class="right">
+								-5钻石
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+    //适配初始化设计稿尺寸为750
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    $(window).resize(function () {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    })
+    //tab切换
+    $(".tab_header").on('click','.tab_btn',function(){
+    	$(".tab_btn").removeClass('active');
+    	$(this).addClass('active');
+    	console.log($(this).attr('data-tab'));
+    	if($(this).attr('data-tab') == 1){
+    		$(".tab_content_box").removeClass('tabactive');
+    	}else{
+    		$(".tab_content_box").addClass('tabactive');
+    	}
+    })
+    //自动热跟新
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>');
+</script>
+
+</html>

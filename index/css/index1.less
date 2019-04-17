@@ -1,0 +1,197 @@
+*{
+    margin:0;
+    padding:0;
+}
+.outer{
+    background-color: #f2f2f2;
+    width: 200vw;
+    // transform: translate(0);
+    transition: .4s all ease;
+    position: relative;
+    .content1{
+        position: absolute;
+        left: 0;
+    }
+    .content2{
+        position: absolute;
+        left: 100vw !important;
+        .searchbox{
+            height: 1.1rem;
+            min-width: 100vw;
+            padding:.5rem .2rem;
+            position: relative;
+            background-color: #ff66a3;
+            font-size: 0;
+            box-sizing: border-box;
+            img{
+                position: absolute;
+                top:.46rem;
+                left:.18rem;
+                width: .5rem;
+                height: .5rem;
+            }
+            .search{
+                width: 88%;              
+                display: inline-block;
+                border:1px solid #ccffff;
+                text-indent: .5rem;
+                height: .4rem;
+                border-radius: 0.05rem;
+                background-color: #e1e1ea;
+                
+            }
+            .cancel{
+                width: 10%;
+                
+                font-size: .25rem;
+                text-align: center;
+                display: inline-block;
+                margin-left: 0.1rem;
+                color:#3399ff;
+            }
+        }
+    }
+    .header{
+       width: 100vw;
+       display: flex;
+       height: 1rem;
+       font-size: .33rem;
+       margin-bottom: .2rem;
+       .location{
+          flex: 1.5;
+          font-size: .35rem;
+          font-weight: 600;
+          line-height: 1rem;
+          text-align: center;
+          position: relative;
+          &:after{
+            content: "";
+            display: block;
+            width: .25rem;
+            height: .25rem;
+            position: absolute;
+            top: 40%;
+            left: 80%;
+            background: url('../images/sanjiao.png') no-repeat center;
+            background-size: .25rem .25rem;
+            // transform: translate(-50%,-50%) rotate(45deg);
+        }
+       }
+
+       .title{
+           flex: 7;
+           .titletext{
+               width: 1.6rem;
+               height: .7rem;
+               line-height: .7rem;
+               border-radius: .1rem;
+               background-color: rgba(255, 0, 102,.9);
+               text-align: center;
+               margin:.15rem auto;
+               color:#fff;
+           }
+
+       }
+       .search{
+           flex: 1.5;
+           img{
+               width: .8rem;
+               height: .8rem;
+               margin-top:.16rem;
+           }
+       }
+    }
+    .center{
+        width: 100vw;
+        position: relative;
+        .hot{
+            text-align: center;
+            font-size: .29rem;
+            color:#ff66a3;
+            font-weight: 700;
+            &:after{
+                content:"";
+                display:block;
+                width: .6rem;
+                height: 2px;
+                // position: absolute;
+                // bottom:0;
+                margin:.2rem auto;
+                background-color: #ff1a75;
+            }
+        }
+    }
+    .content{
+        width: 100vw;
+        .movie{
+            padding:.2rem;
+            display: flex;
+            height: 2.2rem;
+            .left{
+                flex: 2;
+                text-align: left;
+                img{
+                    height: 100%;
+                }
+            }
+            .center{
+                flex:6;
+                text-align:left;
+                padding: 0.01rem .2rem;
+                p{
+                    font-size: .25rem;
+                    color:#000;
+                    font-weight: 400;
+    
+                }
+                .title{
+                    font-size: .34rem;
+                    font-weight: 900;
+                    letter-spacing:0.02rem;
+                }
+                .score{
+                    margin:.2rem 0.02rem;
+                    font-size: .24rem;
+                    font-weight: 500;
+                    letter-spacing:0.02rem; 
+                    span{
+                        color:#e68a00;
+                        font-size: .26rem;
+                    }
+                }
+                .boss{
+                    margin-top:.4rem;
+                    font-size: .24rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+
+                }
+                .actor{
+                    margin-top:.2rem;
+                    font-size: .24rem;
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+            .right{
+                text-align: right;
+                flex:2;
+                .buy{
+                    font-size: .26rem;
+                    margin-top: .9rem;
+                    height: .7rem;
+                    width: 100%;
+                    background-color: #ff3399;
+                    border-radius: .3rem;
+                    color:#fff;
+                    text-align: center;
+                    line-height: .7rem;
+                }
+                
+            }
+        }
+    }
+}

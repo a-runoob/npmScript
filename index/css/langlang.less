@@ -1,0 +1,335 @@
+*{  
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.clear:after {
+    content: ".";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    height: 0;
+    visibility:hidden;
+}
+.nw1{
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;    
+}
+li,ul{
+    list-style: none;
+}
+.outer{
+    width: 100vw;
+    height: 100vh;
+    .chatList{
+        background-color: #fff;
+        .listItem{
+            width: 100%;
+            padding:.1rem;
+            // position: relative;
+            &:after{
+                content: ".";
+                clear:both;
+                display: block;
+                overflow: hidden;
+                font-size: 0;
+                height: 0;
+                width: 100%;
+            }
+            border-bottom: 1px solid lightgray;
+            .portrait{
+                width: .6rem;
+                height: .6rem;
+                float:left;
+                position: relative;
+                img{
+                    width: 100%; 
+                    height: 100%;
+                    border-radius: 8px;
+                }
+                .unreadCount{
+                    position: absolute;
+                    right: 0;
+                    top:0;
+                    width: 19px;
+                    height: 19px;
+                    border-radius: 50%;
+                    background-color: red;
+                    color:#fff;
+                    font-size: 14px;
+                    text-align:center;
+                    line-height: 19px;
+                    transform: translate(35%,-35%);
+                }
+            }
+            .content{
+                width: 68%;
+                background-clip: #999;
+                float: left;              
+                padding: .1rem .1rem;
+                height: .6rem;
+                position: relative;
+                .name{
+                    font-size: .16rem;
+                    position: absolute;
+                    top:.08rem;
+                    left:.15rem;
+                    font-weight: 400;
+                    color:#000;
+                    // margin-top: .1rem;
+                }
+                .msg{
+                    font-size: .14rem;
+                    // margin-bottom: .3rem;
+                    position: absolute;
+                    left:.15rem;
+                    top: .35rem;
+                    font-weight: lighter;
+                    height: .2rem;
+                    width: 100%;
+                }
+
+            }
+            .receiveTime{
+                height: .6rem;
+                float: right;
+                padding-top: .08rem;
+                color: gray;
+            }
+        }
+    }
+}
+
+.header{
+    height: .5rem;
+    width: 100%;
+    padding:0.1rem .1rem .1rem 0;
+    display: flex;
+    .iconBack{
+        width: .3rem;
+        height: .3rem;
+        min-width: .3rem;
+    }
+    .back{
+        width: .3rem;
+        height: .3rem;
+        font-size: .14rem;
+        font-weight: 300;
+        line-height: .3rem;
+        min-width: .3rem;
+    }
+    .title {
+        flex:7;
+        text-align: center;
+        line-height: .3rem;
+        padding-right: .1rem;
+    }
+    .more{
+        width: .3rem;
+        height: .3rem;
+        min-width: .3rem;
+    }
+}
+.scrollView{
+    width: 100vw;
+    height: calc(100vh - 1.15rem);
+    overflow: hidden;
+    background-color: rgb(240, 238, 238);
+    .inner{
+        width: 102vw;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        position: relative;
+        .loadimg{
+            position: absolute;
+            top:19px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .innerest{    //加这一层  为了得到滚动条的高度
+            // 发送消息
+            .time{
+                width: 30%;
+                height: 19px;
+                background-color: rgb(221, 218, 218);
+                font-size: 14px;
+                text-align: center;
+                margin: 0  auto;
+                border-radius: 3px;
+                line-height: 19px;
+            }
+            .sendMsg{
+                padding: .1rem;  
+                &::after{
+                    content:".";
+                    clear:both;
+                    display:block;
+                    height:0;
+                    overflow:hidden;
+                    visibility:hidden;
+                } 
+                .usericon{
+                    width: .4rem;
+                    height: .4rem;
+                    border-radius: .03rem;
+                    margin:0 .1rem;
+                    float:right;
+                }
+                .photo{
+                    max-width: 2rem;
+                    border-radius: .01rem;
+                    float:right;
+                    background-color: lightblue;    
+                }
+                .messageinfo{
+                    max-width:75% ;
+                    min-width: .3rem;
+                    height: auto;
+                    min-height: .3rem;
+                    text-align: left;
+                    background-color: #abccf0;
+                    font-size: .16rem;
+                    font-weight: 400;
+                    color:#000;
+                    border-radius: .05rem;
+                    padding:0.05rem;
+                    word-break: break-all;
+                    float:right;
+                    margin-top: 0.04rem;
+                }
+                
+            } 
+        }
+
+        //接受消息
+        .receiveMsg{ 
+            padding: .1rem; 
+            position: relative;     
+            &::after{
+                content:".";
+                clear:both;
+                display:block;
+                height:0;
+                overflow:hidden;
+                visibility:hidden;
+            }     
+            .usericon{
+                width: .4rem;
+                height: .4rem;
+                border-radius: .03rem;
+                margin-right: .1rem;
+                float:left;
+            }
+            .photo{
+                max-width: 2rem;
+                height: auto;
+                border-radius: .01rem;
+                margin-right: .1rem;
+                float:left;
+            }
+            .messageinfo{
+                min-width: .3rem;
+                max-width:75% ;
+                height: auto;
+                min-height: .3rem;
+                text-align: left;
+                background-color: #fff;
+                font-size: .16rem;
+                font-weight: 400;
+                color:#000;
+                border-radius: .05rem;
+                padding:0.05rem;
+                word-break: break-all;
+                float:left;
+                margin-top: 0.04rem;
+            }
+        }
+    }
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    z-index: 99;
+    background-color: #fff;
+    padding-top: .1rem;
+    .input{
+        width: 100vw;
+        display: flex;
+        .voice{
+            width: .4rem;
+            height: .4rem;
+            min-width: .4rem;
+            padding:.05rem;
+            img{
+                width:100%;
+                height: 100%; 
+            }
+        }
+        form{
+            flex: 8;
+            .input{
+                width: 100%;
+                height: 100%;
+            }
+        }
+ 
+        .expression{
+            width: .4rem;
+            height: .4rem;
+            min-width: .4rem;
+            padding:.05rem;
+            img{
+                width:100%;
+                height: 100%;
+            }
+        }
+        .add{
+            width: .4rem;
+            height: .4rem;
+            min-width: .4rem;
+            padding:.05rem;
+            img{
+                width:100%;
+                height: 100%;
+            }
+        }
+    }
+    .menu{
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        padding: .1rem;
+    
+        .item{
+            text-align: center;
+            min-width: 25%;
+        }
+    }
+    .express-outer{
+        width: 100vw; 
+        .expressionMenu{
+            width: 100%;
+            background-color: #eee;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 1.88rem;
+            padding: 0.04rem 0.02rem;
+            align-items: flex-start;
+            align-content: flex-start;
+            .li{
+                width: .35rem;
+                height: .35rem;
+                text-align: center;
+                line-height: .35rem;
+            }
+        }   
+    }
+
+}

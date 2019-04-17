@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>支付宝提现</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="binding_alipay">
+        <div class="form_list">
+        	<div class="form_item">
+        		<span class="title">支付宝账号</span>
+        		<input class="inputs right" type="text" id="name" value="死性不改" />
+        	</div>
+        	<div class="form_item r_t">
+        		<span class="title">可提取金额</span>
+        		<input class="inputs right pdr" type="text" id="price" value="116" />
+        	</div>
+        	<div class="form_item">
+        		<span class="title">申请提现金额</span>
+        		<input class="inputs right" type="text" id="apply_price" oninput="sub(this)" placeholder="请输入提现金额" />
+        	</div>
+        	<div class="form_item">
+        		<span class="title">手续费</span>
+        		<input class="inputs right" type="text" id="inp_price" value="10%" />
+        	</div>
+        	<div class="form_item">
+        		<span class="title">到账金额</span>
+        		<input class="inputs right" type="text" id="now_price" />
+        	</div>
+        </div>
+        <div class="sub_btn">确认提现</div>
+    </div>
+</body>
+<script>
+    //适配初始化设计稿尺寸为750
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    $(window).resize(function () {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    })
+    //计算实际到帐金额
+    function sub(){
+    	var price = $("#apply_price").val();
+    	if(price != ""){
+    		$("#now_price").val(Math.floor((price - (price * 0.1)) * 100) / 100)
+    	}else{
+    		$("#now_price").val('')
+    	}
+    }
+    //自动热跟新
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>');
+</script>
+
+</html>

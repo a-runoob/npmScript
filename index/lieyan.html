@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index2.css" />
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="js/swiper.min.js"></script>
+	</head>
+	<body>
+ <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="page1">
+            <img src="img/192.png" alt="" class="top-img">
+            <div class="bottom-img">
+                <p class="title">1V1视频亲密互动交友</p>
+                <p class="small-text">海量女神在线视频交友</p>
+                <div class="download-btn1">立即下载</div>
+                <img class="down-page1" src="img/down.png" alt="">
+            </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="page2">
+            <p class="big-title">更近·因为触手可及</p>
+            <p class="page2-text text1">附近美女任你撩</p>
+            <p class="page2-text text2">今天面对面，明天手牵手</p>
+            <div class="center-img"></div>
+            <div class="download-btn2">立即下载</div>
+            <img src="img/down.png" class="down" alt="">
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="page3">
+            <p class="big-title">更值·因为走心</p>
+            <p class="page3-text text1">一个笑容、一个眼神</p>
+            <p class="page3-text text2">都是初恋的感觉</p>
+            <div class="center-img">
+                <img class="msg1" src="img/msg1.png"></img>
+                <img class="msg2" src="img/msg2.png"></img>
+            </div>
+            <div class="download-btn2">立即下载</div>
+            <img src="img/down.png" alt=""  class="down">
+        </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="page4">
+              <p class="big-title">更赚·因为舍得</p>
+              <p class="page4-text text1">只要你舍得用心</p>
+              <p class="page4-text text2">就能赚到更多奖励</p>
+              <div class="center-img">
+                  <img class="msg1" src="img/msg3.png"></img>
+                  <img class="msg2" src="img/msg4.png"></img>
+              </div>
+              <div class="download-btn2">立即下载</div>
+              <img src="img/up.png" alt=""  class="down">
+          </div>
+      </div>
+    </div>
+  </div>
+            
+	</body>
+	<script>
+    $('.page1 ,.page2,.page3,.page4').height(window.innerHeight);
+		//适配初始化设计稿尺寸为750
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		$(window).resize(function() {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		})
+		//自动热跟新
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>');
+
+
+  var obj={
+     //按钮
+      button:function(el,scale){
+        $(el).css({'transform':'translateX(-50%) scale('+scale+')'});
+      },
+      //大标题
+      bigtitle:function(el,distance,time,opacity){
+          $(el).css({'transition':'all ease '+time+'s',
+          'transform':'translateX('+distance+'px)','opacity':opacity})
+      },
+   } 
+    //初始化元素状态
+        obj.button('.page1 .download-btn1',1);
+        obj.button('.page2 .download-btn2,.page3 .download-btn2,.page4 .download-btn2',0.5);
+        obj.bigtitle('.page2 .big-title',-30,0.1,0);
+        obj.bigtitle('.page2-text',30,0.1,0);
+      // 第一页
+    function page1animate(){
+      //下载按钮
+      obj.button('.page1 .download-btn1',1);
+      obj.button('.page2 .download-btn2',0.5);
+      obj.bigtitle('.page2 .big-title',-30,0.1,0);
+      obj.bigtitle('.page2-text',30,0.1,0);
+    }
+// 第二页
+    function page2animate(){
+        obj.button('.page2 .download-btn2',1);
+        obj.button('.page1 .download-btn1,.page3 .download-btn2',0.5);
+        obj.bigtitle('.page2 .big-title',0,1,1);
+         // 小标题
+        obj.bigtitle('.page3-text',30,0.1,0);
+        obj.bigtitle('.page2-text',0,1,1);
+        // 聊天对话
+        obj.bigtitle('.msg1',35,0.1,0);
+        obj.bigtitle('.msg2',-35,0.1,0);
+    }
+// 第三页
+    function page3animate(){
+            //下载按钮
+      obj.button('.page4 .download-btn2,.page2 .download-btn2',0.5)
+      obj.button('.page3 .download-btn2',1)
+      // 大标题
+      obj.bigtitle('.page2 .big-title,.page4 .big-title',-30,0.1,0);
+      obj.bigtitle('.page3 .big-title',0,1,1);
+      // 小标题
+      obj.bigtitle('.page3-text',0,1,1);
+      obj.bigtitle('.page2-text,.page4-text',30,0.1,0);
+        //聊天对话
+        setTimeout(function(){
+        obj.bigtitle('.msg1',0,1.5,1);
+          setTimeout(function(){
+            obj.bigtitle('.msg2',0,1.5,1);
+          },700)
+        },700)
+        obj.bigtitle('.msg3',35,0.1,0);
+        obj.bigtitle('.msg4',-35,0.1,0);
+    }
+  //第四页 
+    function page4animate(){
+      obj.button('.page3 .download-btn2',0.5);
+      obj.button('.page4 .download-btn2',1)
+       // 大标题
+      obj.bigtitle('.page3 .big-title',-30,0.1,0);
+      obj.bigtitle('.page4 .big-title',0,1,1);
+      obj.bigtitle('.page3-text',30,0.1,0);
+      obj.bigtitle('.page4-text',0,1,1);
+      // 聊天对话
+      obj.bigtitle('.msg1',35,0.1,0);
+      obj.bigtitle('.msg2',-35,0.1,0);
+      setTimeout(function(){
+      obj.bigtitle('.msg3',0,1.5,1);
+      setTimeout(function(){
+          obj.bigtitle('.msg4',0,1.5,1);
+        },700)
+      },700)
+    }
+    //初始化轮播属性
+    var mySwiper = new Swiper('.swiper-container', {
+        speed: 400,
+        height: window.innerHeight,
+        direction:'vertical',
+        preventClicks:true,//防止在滑动过程中意外不必要的链接点击
+        onSetTransition:function(swiper){
+          console.log(swiper.activeIndex);
+          // 调用动画函数
+          if(swiper.activeIndex == 0){
+            page1animate();
+          }
+          if(swiper.activeIndex == 1){
+            page2animate();
+          }
+          if(swiper.activeIndex == 2){
+            page3animate();
+          }
+          if(swiper.activeIndex == 3){
+            page4animate();
+          }
+        }
+    }); 
+	</script>
+</html>

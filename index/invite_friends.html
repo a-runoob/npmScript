@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>邀请好友</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="invite_friends">
+        <div class="box_one">
+        	<div class="top_msg">
+        		<div class="left">
+        			<p>已累计邀请</p>
+        			<p>10人</p>
+        		</div>
+        		<div class="right">
+        			<p>已累计获得奖励</p>
+        			<p>100钻石</p>
+        		</div>
+        	</div>
+        	<div class="lq_text">
+        		<span>当前可领取100钻石</span>
+        		<button>一键领取</button>
+        	</div>
+        </div>
+        <div class="box_two">
+        	<div class="title">规则介绍</div>
+        	<p>1.如何邀请？通过邀请页面分享给好友，好友 通过你的链接下载成功并注册后，完成邀请。 </p>
+        	<p>2.如何奖励？用户将获得好友充值金额*10%的 钻石奖励，可用于赠送礼物。</p>
+        	<p>3.奖励时间:从被邀请人注册时间开始的30天内， 超过30天，将不计算奖励。 </p>
+        </div>
+        <button class="invite_btn">
+        	邀请好友
+        </button>
+    </div>
+</body>
+<script>
+    //适配初始化设计稿尺寸为750
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    $(window).resize(function () {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    })
+    //自动热跟新
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>');
+</script>
+
+</html>

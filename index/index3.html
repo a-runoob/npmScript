@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>电影</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index1.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="outer">
+    <div class="content2">
+        <div class="searchbox">
+            <img src="./images/search.png" alt="">
+            <input type="text" class="search"  placeholder="搜影片、影院、演出">
+            <span class="cancel">取消</span>
+        </div>
+    </div>
+    <div class="content1">
+            <div class="header">
+                    <div class="location">深圳</div>
+                    <div class="title"><div class="titletext">电影</div></div>
+                    <div class="search"><img src="./images/search.png" alt=""></div>
+                </div>
+                <div class="center">
+                    <div class="hot">正在热映</div>
+                </div>
+                <div class="content">
+                    <div class="movie">
+                        <div class="left"><img src="./images/captain.jpg" alt="" mode="contain"></div>
+                        <div class="center">
+                            <p class="title">惊奇队长 3D MAX</p>
+                            <p class="score">观众评分 <span>8.6</span></p>
+                            <p class="boss">导演: 设计费尽 量克服 sadff</p>
+                            <p class="actor">主演: 不利·拉尔森</p>
+                        </div>
+                        <div class="right">
+                            <div class="buy">购票</div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <div class="left"><img src="./images/captain.jpg" alt="" mode="contain"></div>
+                        <div class="center">
+                            <p class="title">惊奇队长 3D MAX</p>
+                            <p class="score">观众评分 <span>8.6</span></p>
+                            <p class="boss">导演: 设计费尽 量克服 sadff</p>
+                            <p class="actor">主演: 不利·拉尔森</p>
+                        </div>
+                        <div class="right">
+                            <div class="buy">购票</div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <div class="left"><img src="./images/captain.jpg" alt="" mode="contain"></div>
+                        <div class="center">
+                            <p class="title">惊奇队长 3D MAX</p>
+                            <p class="score">观众评分 <span>8.6</span></p>
+                            <p class="boss">导演: 设计费尽 量克服 sadff</p>
+                            <p class="actor">主演: 不利·拉尔森</p>
+                        </div>
+                        <div class="right">
+                            <div class="buy">购票</div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <div class="left"><img src="./images/captain.jpg" alt="" mode="contain"></div>
+                        <div class="center">
+                            <p class="title">惊奇队长 3D MAX</p>
+                            <p class="score">观众评分 <span>8.6</span></p>
+                            <p class="boss">导演: 设计费尽 量克服 sadff</p>
+                            <p class="actor">主演: 不利·拉尔森</p>
+                        </div>
+                        <div class="right">
+                            <div class="buy">购票</div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <div class="left"><img src="./images/captain.jpg" alt="" mode="contain"></div>
+                        <div class="center">
+                            <p class="title">惊奇队长 3D MAX</p>
+                            <p class="score">观众评分 <span>8.6</span></p>
+                            <p class="boss">导演: 设计费尽 量克服 sadff</p>
+                            <p class="actor">主演: 不利·拉尔森</p>
+                        </div>
+                        <div class="right">
+                            <div class="buy">购票</div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <div class="left"><img src="./images/captain.jpg" alt="" mode="contain"></div>
+                        <div class="center">
+                            <p class="title">惊奇队长 3D MAX</p>
+                            <p class="score">观众评分 <span>8.6</span></p>
+                            <p class="boss">导演: 设计费尽 量克服 sadff</p>
+                            <p class="actor">主演: 不利·拉尔森</p>
+                        </div>
+                        <div class="right">
+                            <div class="buy">购票</div>
+                        </div>
+                    </div>
+                    <div class="movie">
+                        <div class="left"><img src="./images/captain.jpg" alt="" mode="contain"></div>
+                        <div class="center">
+                            <p class="title">惊奇队长 3D MAX</p>
+                            <p class="score">观众评分 <span>8.6</span></p>
+                            <p class="boss">导演: 设计费尽 量克服 sadff</p>
+                            <p class="actor">主演: 不利·拉尔森</p>
+                        </div>
+                        <div class="right">
+                            <div class="buy">购票</div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    
+</div>
+<ul class="box"></ul>
+</body>
+<script>
+
+    $(document).ready(function(){
+        // $('.searchbox .search').focus();
+        $('.search').on('click',function(){
+            $('.outer').css({'transform':'translate(-100vw)'});
+           
+
+        })
+        $('.cancel').click(function(){
+            $('.outer').css({'transform':'translate(0)'});
+            
+        })
+
+
+          var arr=[{name:'huang'},{name:'cheng'},{name:123}];
+        //test html拼接
+        // var html='';
+        //  for(var i=0;i<arr.length;i++){
+        //      html+='<div>'+
+        //             '<h1>'+
+        //             arr[i].name+
+        //             '</h1>'+
+        //             '</div>'+'</br>'
+        //  }
+        //  $('.box').html(html);
+
+    })
+//适配初始化设计稿尺寸为750
+document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		$(window).resize(function() {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        })
+        
+        //自动热跟新
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+			':35729/livereload.js?snipver=1"></' + 'script>');
+</script>
+</html>

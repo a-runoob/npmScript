@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.outer {
+  background-color: #f2f2f2;
+  width: 200vw;
+  transition: 0.4s all ease;
+  position: relative;
+}
+.outer .content1 {
+  position: absolute;
+  left: 0;
+}
+.outer .content2 {
+  position: absolute;
+  left: 100vw !important;
+}
+.outer .content2 .searchbox {
+  height: 1.1rem;
+  min-width: 100vw;
+  padding: 0.5rem 0.2rem;
+  position: relative;
+  background-color: #ff66a3;
+  font-size: 0;
+  box-sizing: border-box;
+}
+.outer .content2 .searchbox img {
+  position: absolute;
+  top: 0.46rem;
+  left: 0.18rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.outer .content2 .searchbox .search {
+  width: 88%;
+  display: inline-block;
+  border: 1px solid #ccffff;
+  text-indent: 0.5rem;
+  height: 0.4rem;
+  border-radius: 0.05rem;
+  background-color: #e1e1ea;
+}
+.outer .content2 .searchbox .cancel {
+  width: 10%;
+  font-size: 0.25rem;
+  text-align: center;
+  display: inline-block;
+  margin-left: 0.1rem;
+  color: #3399ff;
+}
+.outer .header {
+  width: 100vw;
+  display: flex;
+  height: 1rem;
+  font-size: 0.33rem;
+  margin-bottom: 0.2rem;
+}
+.outer .header .location {
+  flex: 1.5;
+  font-size: 0.35rem;
+  font-weight: 600;
+  line-height: 1rem;
+  text-align: center;
+  position: relative;
+}
+.outer .header .location:after {
+  content: "";
+  display: block;
+  width: 0.25rem;
+  height: 0.25rem;
+  position: absolute;
+  top: 40%;
+  left: 80%;
+  background: url('../images/sanjiao.png') no-repeat center;
+  background-size: 0.25rem 0.25rem;
+}
+.outer .header .title {
+  flex: 7;
+}
+.outer .header .title .titletext {
+  width: 1.6rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  border-radius: 0.1rem;
+  background-color: rgba(255, 0, 102, 0.9);
+  text-align: center;
+  margin: 0.15rem auto;
+  color: #fff;
+}
+.outer .header .search {
+  flex: 1.5;
+}
+.outer .header .search img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.16rem;
+}
+.outer .center {
+  width: 100vw;
+  position: relative;
+}
+.outer .center .hot {
+  text-align: center;
+  font-size: 0.29rem;
+  color: #ff66a3;
+  font-weight: 700;
+}
+.outer .center .hot:after {
+  content: "";
+  display: block;
+  width: 0.6rem;
+  height: 2px;
+  margin: 0.2rem auto;
+  background-color: #ff1a75;
+}
+.outer .content {
+  width: 100vw;
+}
+.outer .content .movie {
+  padding: 0.2rem;
+  display: flex;
+  height: 2.2rem;
+}
+.outer .content .movie .left {
+  flex: 2;
+  text-align: left;
+}
+.outer .content .movie .left img {
+  height: 100%;
+}
+.outer .content .movie .center {
+  flex: 6;
+  text-align: left;
+  padding: 0.01rem 0.2rem;
+}
+.outer .content .movie .center p {
+  font-size: 0.25rem;
+  color: #000;
+  font-weight: 400;
+}
+.outer .content .movie .center .title {
+  font-size: 0.34rem;
+  font-weight: 900;
+  letter-spacing: 0.02rem;
+}
+.outer .content .movie .center .score {
+  margin: 0.2rem 0.02rem;
+  font-size: 0.24rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+}
+.outer .content .movie .center .score span {
+  color: #e68a00;
+  font-size: 0.26rem;
+}
+.outer .content .movie .center .boss {
+  margin-top: 0.4rem;
+  font-size: 0.24rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.outer .content .movie .center .actor {
+  margin-top: 0.2rem;
+  font-size: 0.24rem;
+  position: absolute;
+  bottom: 0;
+}
+.outer .content .movie .right {
+  text-align: right;
+  flex: 2;
+}
+.outer .content .movie .right .buy {
+  font-size: 0.26rem;
+  margin-top: 0.9rem;
+  height: 0.7rem;
+  width: 100%;
+  background-color: #ff3399;
+  border-radius: 0.3rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.7rem;
+}

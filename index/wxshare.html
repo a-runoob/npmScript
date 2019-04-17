@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js" ></script>
+<script type="text/javascript">
+    var imgUrl = 'http://dev.mymax.cn/affix/manmanhouse/images/share.jpg'; 
+    var lineLink = 'http://dev.mymax.cn/affix/manmanhouse/index.html'; 
+    var descContent = '人类天生就爱玩游戏，游戏为什么吸引人？如果借助游戏的规律，是否可以让工作学习变得更精彩？';
+    var shareTitle = '游戏化学习工作坊第四站-北京清华科技园';
+    // var appid = 'wx2d2d624c822162fd';
+    $.ajax({
+        type : 'POST',
+        url :  "http://dev.mymax.cn/running/comm/weixin/open/jsSDKConfig",  
+        dataType : "json",
+        data:{url:window.location.href.split('#').toString()},
+        success : function(response){
+             var appId = response.s.appId;
+                var timestamp = response.s.timeStamp;
+                var nonceStr = response.s.nonceStr;
+                var signature = response.s.signature;
+
+                wx.config({
+                    debug: false,
+                    appId: appId,
+                    timestamp: timestamp,
+                    nonceStr: nonceStr,
+                    signature: signature,
+                    jsApiList: [
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage'
+                    ]
+                });
+                 wx.ready(function() {
+                     //qq空间  朋友圈
+                        wx.updateTimelineShareData({
+                            title: shareTitle, // 分享标题
+                            link: lineLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: imgUrl, // 分享图标
+                            success: function () {
+                                console.log('分享成功')
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        });
+                        //qq 好友 朋友
+                        wx.updateAppMessageShareData({
+                            title: shareTitle, // 分享标题
+                            desc: descContent, // 分享描述
+                            link: lineLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: imgUrl, // 分享图标
+                            // type: '', // 分享类型,music、video或link，不填默认为link
+                            // dataUrl:'' , // 如果type是music或video，则要提供数据链接，默认为空
+                            success: function () {
+                                console.log('分享成功')                                
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        });
+                });
+        },
+        error:function(response){
+            // window.parent.growl("删除失败["+response.responseText+"]!","error");
+        }
+    });
+</script>
+</head>
+<body>
+    
+</body>
+</html>

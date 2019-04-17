@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<title>公会管理</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="historical_bill">
+		<p class="top_text">温馨提示:转账可能需要1~3个工作日</p>
+		<div class="section_list">
+			<div class="section_item">
+				<div class="top_header">
+					<p class="p1">提现周期</p>
+					<p class="p2">2018-12-17 至 2018-12-23</p>
+				</div>
+				<div class="bottom_box">
+					<div class="price_msg">
+						<p class="title">提现金额(元)</p>
+						<p class="price false">100.00</p>
+					</div>
+					<div class="price_msg_list">
+						<div class="price_msg_item">
+							<span>累计佣金</span><span>124.00</span>
+						</div>
+						<div class="price_msg_item">
+							<span>手续费</span><span>1.24</span>
+						</div>
+						<p class="comment_text">注:提现收取1%手续费</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	//适配初始化设计稿尺寸为750
+	document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+	$(window).resize(function () {
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+	})
+	//自动热跟新
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+		':35729/livereload.js?snipver=1"></' + 'script>');
+</script>
+
+</html>

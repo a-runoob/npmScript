@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title></title>
+        <link rel="stylesheet" type="text/css" href="css/langlang.css" />
+        <link rel="stylesheet" href="css/mui.min.css">
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <!-- 预览 -->
+        <link rel="stylesheet" href="css/photoswipe.css">
+        <link rel="stylesheet" href="css/default-skin.css"> 
+	</head>
+	<body>
+        <div class="header">
+            <img src="langlangimg/back.png" alt="" class="iconBack">
+            <div class="back"><a href="langlang.html">返回</a></div>
+            <div class="title"></div>
+            <img src="langlangimg/more.png" alt="" class="more">
+        </div>
+        <div class="scrollView">
+            <div class="inner">
+                <div class="innerest"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="input">
+                <div class="voice"><img src="langlangimg/voice.png" alt=""></div>
+                <form action="#"><input type="text" class="message" accept="image/*" capture="camera"></form>
+                <!-- <input type="text" class="message"> -->
+                <div class="expression"><img src="langlangimg/expression.png" alt=""></div>
+                <div class="add"><img src="langlangimg/add.png" alt=""></div>
+            </div>
+            <div class="menu" style="display: none;">
+                <input type="file" name="" id="photofile" style="display:none;">
+                <div class="photo item" onclick="$('#photofile').click()"><img src="langlangimg/photo.png" alt="" class="photo"><p>照片</p></div>
+                <div class="location item "><img src="langlangimg/location.png"><p>位置</p></div>
+                <div class="hongbao item"><img src="langlangimg/hongbao.png" ><p>红包</p></div>
+                <div class="videocall item"><img src="langlangimg/video.png"><p>视频通话</p></div>
+                <div class="takephoto item"><img src="langlangimg/takephoto.png" ><p>拍照</p></div>
+                <div class="transfer item"><img src="langlangimg/transfer.png"><p>转账</p></div>
+                <div class="collect item"><img src="langlangimg/collect.png"><p>收藏</p></div>
+                <div class="file item" ><img src="langlangimg/file.png"><p>文件</p></div>   
+            </div>
+            <div class="express-outer">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" >
+                        <div class="swiper-slide">
+                            <div class="expressionMenu express1" style="display: none;"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="expressionMenu express2" style="display: none;"></div> 
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="expressionMenu express3" style="display: none;"></div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 预览 -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div> 
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="http://cdn.ronghub.com/RongIMLib-2.3.5.min.js"></script> 
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.ronghub.com/RongEmoji-2.2.7.min.js"></script> 
+    <script src="js/base64image.js"></script>
+    <script src="js/exif.js"></script>
+    <script src="js/langlang1.js"></script>
+    <script src="js/swiper.min.js"></script>   
+    <!-- 预览 -->
+    <script src="js/photoswipe.min.js"></script> 
+    <script src="js/photoswipe-ui-default.min.js"></script> 
+    <script>  
+        var targetUser={
+            targetId:'1',
+            name:'小红',
+            portrait:'http://pic.qqtn.com/up/2015-8/2015081115292489580.jpg',
+            token:"kfP+gwSuE5b8FGd6YCM1gxb5pc4/yDlAwe02uGw8PSXGoY16tlf9kK2OKJIV78+YwO4Uiq8trSQY0vj/nJwY6w=="
+        }
+        var user={
+            id:'2',
+            name:'小明',
+            portrait:'http://img3.duitang.com/uploads/item/201511/23/20151123134647_dC5iA.thumb.700_0.jpeg',
+            token:'qFmmFLn10DAjsEw3XvFVxhb5pc4/yDlAwe02uGw8PSXGoY16tlf9kFlaoBAXGb2VGxR5RQCdGH8Y0vj/nJwY6w=='
+            // targetId:'3',
+            // name:'郎朗',
+            // portrait:'http://pic2.orsoon.com/2017/0226/20170226092757555.jpg',
+        }
+        // user:{
+        //     targetId:'2',
+        //     name:'小明',
+        //     portrait:'http://img3.duitang.com/uploads/item/201511/23/20151123134647_dC5iA.thumb.700_0.jpeg',
+        //     token:'qFmmFLn10DAjsEw3XvFVxhb5pc4/yDlAwe02uGw8PSXGoY16tlf9kFlaoBAXGb2VGxR5RQCdGH8Y0vj/nJwY6w=='
+        // },
+        //传值  user 和targetUser
+        RongCloud.toChatInfo(user,targetUser);
+
+
+
+        $('.header .title').text(targetUser.name)
+        //连接服务器
+        RongCloud.connectServer();
+        //监听连接服务器状态
+        RongCloud.listenConnectStatus();
+        //初始化表情  
+        RongCloud.InitEmoji();
+        // //跳到不同的好友消息列表
+        // RongCloud.toChatInfo();
+        //发送图片
+        $('#photofile').change(function(){
+            RongCloud.fileUp(this);//调用图片上传
+        }) 
+        //发送文本消息
+        // $('form').on('submit',(e)=>{
+        //     RongCloud.sendTextMsg();
+        //         e.preventDefault();
+        //         return false;
+        // })
+        $('.message').keydown((e)=>{
+            if(e.keyCode==13){
+                RongCloud.sendTextMsg();
+                e.preventDefault();
+            } 
+        })
+        //输入框/表情   点击下拉   
+        $('.input .add').click(()=>{
+            RongCloud.menuExpress($('.expressionMenu'),$('.menu'))
+        })
+        $('.expression').click(()=>{
+            RongCloud.menuExpress($('.menu'),$('.expressionMenu'))
+        })
+        //消息框点击
+        $('.inner').click(()=>{
+            RongCloud.innerClick();
+        })
+        //获取聊天记录
+        $('.inner').scroll(()=>{
+            RongCloud.downGetHistory();
+        })
+        //监听消息
+        RongCloud.listenMessage();
+        //正在输入状态消息
+        $('.input input').keydown(()=>{
+            RongCloud.inputStatus();
+        })
+        //初始化轮播属性(表情栏)
+        var mySwiper = new Swiper('.swiper-container', {
+            speed: 400,
+            height: window.innerHeight,
+            direction:'horizontal',
+            preventClicks:true,//防止在滑动过程中意外不必要的链接点击
+        }); 
+        //适配初始化设计稿尺寸为375
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
+        $(window).resize(function() {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
+        })
+		//自动热跟新
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>');
+	</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>收益详情</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="revenue_details_list">
+		<div class="tab_card">
+			<div class="tab_header">
+				<div class="tab_btn active" data-tab="1">
+					奖金奖励
+				</div>
+				<div class="tab_btn" data-tab="2">
+					钻石奖励
+				</div>
+			</div>
+			<div class="tab_content_box">
+				<div class="tab_content">
+					<div class="header_title">
+						<div class="title_list">用户</div>
+						<div class="title_list">充值金额</div>
+						<div class="title_list">奖励</div>
+					</div>
+					<div class="list_data">
+						<div class="item_data">
+							<div class="left">
+								<p class="name">张三</p>
+								<p class="time">2019-01-15 12:00</p>
+							</div>
+							<div class="center">
+								1000
+							</div>
+							<div class="right">
+								150元
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab_content tab_content2">
+					<div class="header_title">
+						<div class="title_list">用户</div>
+						<div class="title_list">奖励来源</div>
+						<div class="title_list">奖励</div>
+					</div>
+					<div class="list_data">
+						<div class="item_data">
+							<div class="left">
+								<p class="name">张三</p>
+								<p class="time">2019-01-15 12:00</p>
+							</div>
+							<div class="center">
+								邀请奖励
+							</div>
+							<div class="right">
+								150元
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+    //适配初始化设计稿尺寸为750
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    $(window).resize(function () {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    })
+    //tab切换
+    $(".tab_header").on('click','.tab_btn',function(){
+    	$(".tab_btn").removeClass('active');
+    	$(this).addClass('active');
+    	console.log($(this).attr('data-tab'));
+    	if($(this).attr('data-tab') == 1){
+    		$(".tab_content_box").removeClass('tabactive');
+    	}else{
+    		$(".tab_content_box").addClass('tabactive');
+    	}
+    })
+    //app端通宵交互
+    window.openpage = function(){
+    	location.href = "withdrawals_record_list.html"
+    }
+    //自动热跟新
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>');
+</script>
+
+</html>
