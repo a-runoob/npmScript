@@ -1,8 +1,8 @@
 const fs = require('fs');
 const less = require('less');
 const path = require('path');
-const srcPath = path.join(__dirname, 'index/css/langlang.less');
-const distPath = path.join(__dirname, 'index/css/langlang.css');
+const srcPath = path.join(__dirname, 'index/quzhuan.taolai.com/mobile/css/index2.less');
+const distPath = path.join(__dirname, 'index/quzhuan.taolai.com/mobile/css/index2.css');
 console.log("自动编译less服务运行中。。。")
 fs.watchFile(srcPath, {
 		interval: 500 // 每 500 毫秒监视检查文件 一次

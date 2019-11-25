@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>好运APP</title>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        window.onresize = function (){
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+</head>
+<body>
+    <div class="how_bind_alipay">
+        <div class="topContent">
+            <p class="title">如果提示一下情况，将会导致您提现失败</p>
+            <p class="text">1.您的支付宝账户没有实名认证</p>
+            <p class="text">2.您在好运APP绑定支付宝账户时，填写的真实姓名与您支付宝实名认证真实姓名不一致</p>
+        </div>
+        <div class="bottomContent">
+            <div class="stepItem">
+                <div class="stepNum">第一步</div>
+                <div class="redLine"></div>
+                <div class="right">
+                    <p class="textTip">打开支付宝，点[我的],选择[个人信息]</p>
+                    <img src="img/1.png" alt="">
+                </div>
+            </div>
+            <div class="stepItem">
+                <div class="stepNum">第二步</div>
+                <div class="redLine"></div>
+                <div class="right">
+                    <p class="textTip">查看是否已认证</p>
+                    <img src="img/2.png" alt="">
+                </div>
+            </div>
+            <div class="stepItem">
+                <div class="stepNum">第三步</div>
+                <div class="redLine redLine_bottom"></div>
+                <div class="right">
+                    <p class="textTip">已实名认证</p>
+                    <p class="smallText">如果支付宝已实名，请查看支付宝实名认证的姓名是否和好运APP绑定的支付宝真实姓名一直，请务必填写一致</p>
+                    <img src="img/3.png" alt="">
+                    <p class="textTip noAu">未实名认证</p>
+                    <p class="smallText">如果支付宝未实名认证，请先完成实名认证，添加银行卡或验证身份证</p>
+                    <div class="bottomBtn">查看如何身份认证</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mode">
+        <img src="./img/loading.gif" alt="">
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    $(function(){
+        if(localStorage.getItem('howBindAlipay')){
+            $('.mode').css({display:'none'})
+        } else {   
+            localStorage.setItem('howBindAlipay','true')
+            setTimeout(()=>{
+                $('.mode').css({display:'none'})
+            },300)
+        }
+    })
+</script>
+</html>

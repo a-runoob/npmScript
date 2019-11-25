@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{name}}</p>
+        <li e-for="list">{{$_index}} {{$_value}} </li>
+        <p e-for="arr">{{$_index}} {{name}}</p>
+    </div>
+</body>
+<!-- 轻量级MVVM -->
+<script src="eng.min.js"></script>
+<script>
+    var app = new Eng({
+        el:document.getElementById('app'),
+        data:{
+            name:'你好',
+            list:[
+                'a','b','c'
+            ],
+            arr:[
+                {name:'1'},
+                {name:'2'},
+                {name:'3'}
+            ]
+        },
+        watcher: {
+            name: function (o,n,items,cache) {
+                if(n==='你好') {
+                    console.log('sss')
+                    items.$_value = 'xxx'   
+                }
+            },
+            list:function (o,n,items,cache) {
+                console.log(n) // ["a", "b", "c"]
+            },
+            arr:function (o,n,item,cache) {
+                console.log(n)  //  [{…}, {…}, {…}]
+            }
+        },
+        watcherFor: {
+            list:function (item , cache) {
+                console.log(item.$_data) // a, b,c
+            },
+            arr:function (item,cache) {
+                console.log(item.$_data.name)  //1 2 3
+
+            }
+        }
+    })
+</script>
+</html>

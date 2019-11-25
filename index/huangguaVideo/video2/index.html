@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>XX视频下载</title>
+    <script>
+      document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+      window.onresize = function (){
+          document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+      }
+    </script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+	<body>
+    <div class="container">
+      <img src="./img/topimg.png" alt="" class="topImg">
+      <div class="downloadBox">
+        <div class="downloadInnerBox clear">
+          <!-- 下载 -->
+          <a href="###" target="_blank" style="width: 100%;height: 100%;"> 
+              <img src="./img/play.png" alt="" class="playIcon">
+              <span class="text">立即下载</span>
+          </a>
+        </div>
+      </div>
+      <div class="tipContent">
+        由于特殊时期，官网经常被封，为了避免大家无法观看影片，请关注下列渠道，我们会第一时间发布最新地址。
+      </div>
+      <div class="watchWays">
+        <div class="waysItem clear">
+          <img src="./img/play.png" alt="" class="logo">
+          <p class="name">XX视频</p>
+          <div class="rightBtn copyVideo" data-clipboard-target='#videoInput'>复制</div>
+          <textarea name="" style="height: 0;width: 0;"  id="videoInput" cols="30" rows="10"></textarea>
+        </div>
+        <div class="waysItem clear">
+          <img src="./img/potato.png" alt="" class="logo">
+          <p class="name">Potato火爆交流群</p>
+          <div class="rightBtn"><a href="###" target="_blank"></a>加入</div>
+        </div>
+        <div class="waysItem clear">
+          <img src="./img/github.png" alt="" class="logo">
+          <div class="center">
+              <p class="nameTitle">Github</p>
+              <p class="adress">gist.github.com/masminmin</p>
+          </div>
+          <div class="rightBtn"><a href="###" target="_blank"></a>关注</div>
+        </div>
+        <div class="waysItem clear">
+          <img src="./img/email.png" alt="" class="logo">
+          <div class="center">
+              <p class="nameTitle">邮箱</p>
+              <p class="adress">12331xxx@gmail.com</p>
+          </div>
+          <div class="rightBtn copyEmail" data-clipboard-target='#emailInput'>复制</div>
+          <textarea name="" style="height: 0;width: 0;"  id="emailInput" cols="30" rows="10"></textarea>
+        </div>  
+      </div>
+      <div class="teachContent">
+        <p class="title">安装教程</p>
+        <img src="./img/teach.png" alt="" class="teachImg">
+      </div>
+      <div class="friendGoods">
+        <p class="bigTitle">xx福利群</p>
+        <p class="smallTitle">加入xx福利群，最新活动福利实时掌握</p>
+        <div class="chatBox">
+          <img src="./img/potato.png" alt="" class="chatImg">
+          <p class="name">XX视频POTATO福利群(无需翻墙)</p>
+          <div class="joinChat"><a href="###" target="_blank"></a>点击加入</div>
+        </div>
+      </div>
+      <div class="mode">复制成功</div>
+    </div>
+  </body>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/clipboard.min.js"></script>
+  <script>
+    $(function(){
+      $('.copyVideo').click((e) => {
+        // 复制视频地址
+        var timer = 0
+        clearTimeout(timer)
+        $('.mode').css('display','block')
+        var copyText = 'http://www.xxx.com'
+        $('#videoInput').val(copyText)
+        var clipboard = new ClipboardJS('.copyVideo')
+        clipboard.on('success', function(e) {
+          timer =setTimeout(() => {
+            $('.mode').css('display','none')
+          },1200) 
+          e.clearSelection()
+        })
+      })
+      $('.copyEmail').click(() => {
+          // 复制邮箱地址
+          var timer = 0
+          clearTimeout(timer)
+          $('.mode').css('display','block')
+          var copyText = 'xxx@gmail.com'
+          $('#emailInput').val(copyText)
+          var clipboard = new ClipboardJS('.copyEmail')
+          clipboard.on('success', function(e) {
+            timer =setTimeout(() => {
+              $('.mode').css('display','none')
+            },1200) 
+            e.clearSelection()
+          })
+      })
+    })
+      //自动热跟新
+		  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>');
+  </script>
+</html>

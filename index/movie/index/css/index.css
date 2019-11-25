@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: #333;
+}
+a:link {
+  color: transparent;
+}
+a:visited {
+  color: transparent;
+}
+html {
+  font-family: "microsoft yahei";
+}
+body {
+  background-color: #fff;
+  overflow-x: hidden;
+}
+i {
+  font-style: normal;
+}
+.clear:after {
+  content: ".";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  height: 0;
+}
+.nw1 {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nw2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.nw3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.movieIndexPage {
+  background-color: #fcf7f7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 1.2rem;
+}
+.movieIndexPage .swiper-container {
+  font-size: 0;
+  height: 3.6rem;
+}
+.movieIndexPage .swiper-container img {
+  height: 3.6rem;
+  object-fit: cover;
+  object-position: top center;
+}
+.movieIndexPage .swiper-container .play {
+  height: 0.59rem;
+  width: 0.61rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.movieIndexPage .swiper-container .swiper-pagination-bullet {
+  background: #acaaaa !important;
+  z-index: 999;
+  opacity: 1 !important;
+  margin: 0 0.03rem !important;
+  height: 0.12rem;
+  width: 0.12rem;
+}
+.movieIndexPage .swiper-container .swiper-pagination-bullet-active {
+  background: #ffffff !important;
+}
+.movieIndexPage .recommend {
+  padding: 0;
+}
+.movieIndexPage .recommend .header {
+  font-size: 0;
+  padding: 0.2rem 0.2rem 0;
+}
+.movieIndexPage .recommend .header img {
+  height: 0.44rem;
+  object-fit: contain;
+  object-position: inherit;
+  float: left;
+}
+.movieIndexPage .recommend .header .title {
+  font-size: 0.26rem;
+  height: 0.25rem;
+  line-height: 0.25rem;
+  font-weight: bold;
+  color: #000;
+  float: left;
+  margin: 0.11rem 0 0 0.08rem;
+}
+.movieIndexPage .recommend .recMovieList {
+  margin-top: 0.2rem;
+  padding: 0 0.2rem 0.08rem 0.2rem;
+}
+.movieIndexPage .recommend .recMovieList .movieItem {
+  width: calc((100% - 0.2rem) / 3);
+  float: left;
+  font-size: 0;
+  margin-bottom: 0.19rem;
+}
+.movieIndexPage .recommend .recMovieList .movieItem:not(:nth-child(3n)) {
+  margin-right: 0.1rem;
+}
+.movieIndexPage .recommend .recMovieList .movieItem .movieImg {
+  width: 100%;
+  object-fit: contain;
+  object-position: inherit;
+  display: block;
+  border-radius: 0.1rem;
+}
+.movieIndexPage .recommend .recMovieList .movieItem .movieName {
+  font-size: 0.24rem;
+  line-height: 0.23rem;
+  height: 0.23rem;
+  color: #000000;
+  display: block;
+  margin-top: 0.15rem;
+}
+.movieIndexPage .hotPlay {
+  padding: 0 0.2rem;
+}
+.movieIndexPage .hotPlay .header {
+  font-size: 0;
+}
+.movieIndexPage .hotPlay .header img {
+  height: 0.37rem;
+  width: 0.35rem;
+  float: left;
+}
+.movieIndexPage .hotPlay .header .title {
+  font-size: 0.26rem;
+  height: 0.25rem;
+  line-height: 0.25rem;
+  font-weight: bold;
+  color: #000;
+  float: left;
+  margin: 0.09rem 0 0 0.25rem;
+}
+.movieIndexPage .hotPlay .hotMovieList {
+  margin-top: 0.2rem;
+  padding: 0 0 0.08rem 0;
+}
+.movieIndexPage .hotPlay .hotMovieList .movieItem {
+  width: calc((100vw - 0.5rem) / 2);
+  float: left;
+  font-size: 0;
+  margin-bottom: 0.19rem;
+}
+.movieIndexPage .hotPlay .hotMovieList .movieItem:not(:nth-child(2n)) {
+  margin-right: 0.1rem;
+}
+.movieIndexPage .hotPlay .hotMovieList .movieItem .imgBox {
+  width: 100%;
+  height: calc(((100vw - 0.5rem) / 2) * (9 / 16));
+  position: relative;
+  border-radius: 0.1rem;
+  overflow: hidden;
+}
+.movieIndexPage .hotPlay .hotMovieList .movieItem .imgBox .movieImg {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.movieIndexPage .hotPlay .hotMovieList .movieItem .movieName {
+  font-size: 0.24rem;
+  line-height: 0.23rem;
+  height: 0.23rem;
+  color: #000000;
+  display: block;
+  margin-top: 0.14rem;
+}
+.movieIndexPage .copyright {
+  font-size: 0.2rem;
+  color: #F3F3F3;
+  padding: 0.15rem 0;
+  text-align: center;
+  background-color: #201f1f;
+  margin-top: 0.94rem;
+  position: relative;
+}
+.movieIndexPage .copyright .erweima {
+  height: 0.26rem;
+  width: 0.26rem;
+  position: absolute;
+  right: 0.31rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.box {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+}
+.download {
+  height: 0.7rem;
+  line-height: 0.7rem;
+  width: 5.5rem;
+  margin: 0.23rem auto;
+  background: url('../img/downloadBg.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.download .downloadImg {
+  height: 0.4rem;
+  width: 0.4rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.7rem;
+}
+.download .downloadText {
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 2.31rem;
+}

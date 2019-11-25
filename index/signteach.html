@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/signteach.css" />
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body> 
+        <div class="outer_container">
+            <p class="bigTitle">ios安装app提示【未受信任的企业级开发者】</p> 
+            <p class="bigTitle title1">在设置中信任此开发者，教程如下:</p> 
+            <p class="smalltitle">ios安装app后会提示如下图:</p>
+            <img src="./businessSign/1.jpg" alt="">
+            <p class="smalltitle title2">解决办法:</p>
+            <p class="smalltitle title3">1.点击【设置】》【通用】》【设备管理】</p>
+            <img src="./businessSign/2.png" alt="">
+            <img src="./businessSign/3.png" alt="">
+            <p class="smalltitle title2">2.点击【企业级应用】</p>
+            <img src="./businessSign/4.png" alt="">
+            <p class="smalltitle title2">3.点击【信任“New Times Securities Co.,Ltd”】</p>
+            <img src="./businessSign/5.png" alt="">
+            <p class="smalltitle title2">4.点击【信任】,设置之后就可正常运行app啦。</p>
+            <img src="./businessSign/6.png" alt="">
+        </div>     
+    </body>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		$(window).resize(function() {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		})
+		//自动热跟新
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>');
+    </script>
+</html>

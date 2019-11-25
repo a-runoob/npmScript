@@ -8,8 +8,18 @@
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 </head>
 <body>
-    <button class="btn">获取数据</button>
+    <input class="input" type="text" value="123" style="border: none;">
+    <!-- <button class="btn">获取数据</button> -->
+    <a href="weixin://">跳转到微信</a>
     <script>
+        $('.input').click(()=> {
+            $('.input').css('border', '1px solid #333')
+        })
+        $('.input').blur(() => {
+            // $('input').val()
+            console.log($('input').val())
+            $('.input').css('border', 'none')
+        })
     //    function f1(){
     //        var n=999;
     //        function f2(){

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50px;">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,maximum-scale=1,user-scalable=0" /> 
+  <meta name="theme-color" content="#000000" />
+  <title>邀请好友</title>
+  <link href="./invite_friends/invite_friends.css" rel="stylesheet" />
+ </head> 
+ <body>  
+  <div id="root"> 
+   <div>
+    <div class="container">
+     <div class="banner">
+      <img class="banner-logo" src="./invite_friends/logo.png" alt="" />
+      <img class="banner-text" src="./invite_friends/logo-text.73c236a0.png" alt="" />
+      <div class="banner-tips">
+       每日最高
+       <span>5000</span>元奖金
+       <div class="tips-left"></div>
+       <div class="tips-middle"></div>
+       <div class="tips-right"></div>
+      </div>
+     </div>
+     <div class="invite" style="display: block;">
+      <div class="invite-top">
+       <div class="invite-title">
+        本月已有 4883430 人领取了红包
+       </div>
+       <div class="invite-open"></div>
+      </div>
+      <div class="invite-bot">
+       <div class="scroll-content" id="scroll_content" style="height: 2352px;">
+        <div class="bot-listbox">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="getone" style="display: none;">
+      <div class="onebox" id="onebox">
+       <div class="onebox-title">
+        恭喜你获得
+       </div>
+       <div class="onebox-main">
+        <div class="onebox-num">
+         <span style="font-size: 1rem;">1</span>
+         <span style="font-size: 0.8rem;">元</span>
+        </div>
+        <div class="onebox-new">
+         新手奖励
+        </div>
+       </div>
+      </div>
+      <div class="upbox">
+       <div class="barrage-box">
+        <div class="barrage-out">
+         <div class="barrage-in barrage-intop" >
+          <div class="barrage-list barrage-listone" style="opacity: 0; width: 7.5rem;">
+            <img src="./邀请好友_files/4338475.jpg" />
+            <div class="barrage-list-text">
+             <span class="barrage-list-name">132****6189</span> 刮卡赢得
+             <span class="barrage-list-num">207.82</span>元现金
+            </div>
+           </div>
+         </div>
+        </div>
+        <div class="barrage-out">
+          <div class="barrage-in barrage-inbot">
+           <div class="barrage-list barrage-listone" style="opacity: 0; width: 7.5rem;">
+            <img src="./invite_friends/4338475.jpg" />
+            <div class="barrage-list-text">
+             <span class="barrage-list-name">132****6189</span> 刮卡赢得
+             <span class="barrage-list-num">207.82</span>元现金
+            </div>
+           </div>
+          </div>
+         </div>
+       </div>
+       <div class="countdown">
+        <!-- 00:00:00 后奖励过期 -->
+       </div>
+       <div class="downbtn">
+        立即下载领取
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- <script src="./invite_friends/hm.js"></script> -->
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      // 判断是否开过奖
+      if(localStorage.getItem('hasOpen') === 'true'){
+        console.log(localStorage.getItem('hasOpen'))
+        $('.invite').css({'display':'none'})
+        $('.getone').css({'display':'block'})
+        if($('.invite').css('display') == 'none') {
+          $('#onebox').css({
+            'transition':'all 1.5s',
+            'transform':'translateY(-3.8rem)'
+          })
+        }
+      // ajax 获奖名单22222
+      $.ajax({
+        url:'https://restapi.amap.com/v3/staticmap?location=116.481485,39.990464&key=e8add20cfc9328e192bc75b47d10cb62',
+        method:'get',
+        // data:{
+        //   pageSize:20,
+        //   copyright:'osc'
+        // },
+        success:function(res){
+          console.log(res)
+        }
+      })
+      var cashList = [
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'128.8'},
+      ]
+      //将数组一分为二
+      var length =cashList.length
+      if(length % 2 == 0){
+        console.log(length)
+        var cashList1 = cashList.slice(0,length/2)
+        var cashList2 = cashList.slice(length/2, length)
+      } else {
+        var cashList1 = cashList.slice(0,length/2)
+        var cashList2 = cashList.slice(length/2, length)
+      }
+      console.log(cashList1)
+      console.log(cashList2)
+      cashList1.forEach(item=>{
+        $('.barrage-intop').append(
+          '<div class="barrage-list barrage-listtop">' +
+            '<img src="'+ item.portrait +'" />' +
+            '<div class="barrage-list-text">' +
+             '<span class="barrage-list-name">'+ item.phone_num +'</span>刮卡赢得' +
+             '<span class="barrage-list-num">'+ item.count +'</span>元现金' +
+            '</div>' +
+          '</div>'
+        )
+      })
+      cashList2.forEach(item=>{
+        $('.barrage-inbot').append(
+          '<div class="barrage-list barrage-listbot">' +
+            '<img src="'+ item.portrait +'" />' +
+            '<div class="barrage-list-text">' +
+             '<span class="barrage-list-name">'+ item.phone_num +'</span>刮卡赢得' +
+             '<span class="barrage-list-num">'+ item.count +'</span>元现金' +
+            '</div>' +
+          '</div>'
+        )
+      })
+      }else{
+        //ajax  goldList  获奖名单11111
+      var goldList = [
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+        {portrait:'./invite_friends/4191124.jpg',phone_num:'138****8888',count:'13.14',time:'11.24'},
+      ]
+      goldList.forEach((item)=>{
+        $('.bot-listbox').append(
+          '<div class="bot-list">' +
+          '<div class="list-out">' +
+           '<img class="list-avata" src="'+ item.portrait + '" alt="" />' +
+           '<div class="list-text">' +
+            '<div class="list-phone">' +
+             item.phone_num +
+            '</div>' +
+            '<div class="list-time">' +
+             item.time +
+            '</div>' +
+           '</div>' +
+          '</div>' +
+          '<div class="list-money">' +
+           '领取' +
+           '<span>207.82</span>元' +
+          '</div>' +
+         '</div>'
+        )
+      })
+        var timer = 0; // 定时器
+        $('.invite-open').click(function() {
+
+
+
+        clearInterval(timer)
+        // 设置缓存  开过奖了不能再开
+        localStorage.setItem('hasOpen',true)
+        $(this).animate({},()=>{ // 开奖
+          $(this).css({
+            'transition':'all 1.5s',
+            'transform':'rotateY(180deg)'
+          })
+          setTimeout(()=>{
+            $('.invite').css({'display':'none'})
+            $('.getone').css({'display':'block'})
+            if($('.invite').css('display') == 'none') {
+              $('#onebox').css({
+                'transition':'all 1.5s',
+                'transform':'translateY(-3.8rem)'
+              })
+            }
+          },1600)
+        })
+      })
+      // 滚动获奖名单
+      var listHeight = $('.bot-listbox').height();
+      var itemHeight = $('.bot-list').height() + 1;
+      
+        console.log(listHeight)
+        var n=1
+        timer = setInterval(()=>{
+          var distance = n *  0.96
+          console.log(n)
+          console.log($('.bot-listbox').css('bottom'))
+          if(parseInt($('.bot-listbox').css('bottom')) <= (listHeight - 5 * itemHeight)){
+            $('.bot-listbox').animate({
+              'bottom': distance + 'rem'
+            },1500,()=>{n++})
+          }else {
+            $('.bot-listbox').animate({
+              'bottom': 0 + 'rem'
+            },0,()=>{n=1})
+          }
+        },1500)
+      }
+      
+    })
+  </script>
+ </body>
+</html>

@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    display: block;
+    color: #333;
+  }
+  a:link {
+    color: transparent;
+  }
+  a:visited {
+    color: transparent;
+  }
+  html {
+    font-family: "microsoft yahei";
+  }
+  body {
+    background-color: #fff;
+    overflow-x: hidden;
+  }
+  i {
+    font-style: normal;
+  }
+  .clear:after {
+    content: ".";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    height: 0;
+  }
+  .nw1 {
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .nw2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .nw3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+.container{
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background:linear-gradient( #ff9091,#f13564);
+  padding-bottom: .2rem;
+  position: relative;
+  .mode{
+    display: none;
+    height: .6rem;
+    line-height: .6rem;
+    padding: .1rem .25rem;
+    border-radius: .2rem;
+    text-align: center;
+    background-color: #f13564;
+    font-size: .34rem;
+    // font-weight: 600;
+    letter-spacing: .03rem;
+    color:#fff;
+    position: fixed;
+    top: 58%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .topImg{
+    width: 100%;
+    display: block;
+  }
+  .downloadBox{
+    width: 7.1rem;
+    border-radius: .2rem;
+    background-color: #f4f4f4;
+    opacity: .7;
+    margin: -0.8rem auto 0;
+    padding: .4rem 0;
+    .downloadInnerBox{
+      width: 4rem;
+      height: .9rem;
+      margin: 0 auto;
+      border-radius: .3rem;
+      background-color: #f34671;
+      font-size: 0;
+      .playIcon{
+        width: .52rem;
+        height: .52rem;
+        float: left;
+        margin:.19rem 0 0 .8rem;
+      }
+      .text{
+        font-size: .38rem;
+        color: #ffffff;
+        font-weight: 600;
+        float: right;
+        margin: .19rem 0.8rem 0 0;
+        letter-spacing: .02rem;
+      }
+    }
+  }
+  .tipContent{
+    font-size: .28rem;
+    color: #ffffff;
+    padding: .2rem .45rem;
+    text-indent: .53rem;
+  }
+  .watchWays{
+    width: 7.1rem;
+    border-radius: .2rem;
+    background-color: #f4f4f4;
+    opacity: .8;
+    margin: .14rem auto 0;
+    padding: .2rem .15rem .1rem;
+    box-sizing: border-box;
+    .waysItem{
+      margin-bottom: .2rem;
+      min-height: 1.2rem;
+      .logo{
+        width: .88rem;
+        height: .88rem;
+        float: left;
+        margin-top: .18rem;
+      }
+      .name{
+        font-size: .35rem;
+        color: #333;
+        margin: .34rem 0 0 .2rem;
+        float: left;
+      }
+      .center{
+        float: left;
+        margin-left: .2rem;
+        margin-top: .17rem;
+        max-width: 45%;
+        .nameTitle{
+          font-size: .35rem;
+          color: #333;
+          margin-top: .02rem;
+        }
+        .adress{
+          font-size: .28rem;
+          color: #999999;
+          margin-top: .02rem;
+          word-wrap: break-word;
+        }
+      }
+      .rightBtn{
+        width: 2rem;
+        height: .6rem;
+        border-radius: .35rem;
+        line-height: .6rem;
+        text-align: center;
+        color: rgb(245, 76, 76);
+        border: .02rem solid rgb(245, 76, 76);
+        float: right;
+        font-size: .34rem;
+        margin-top: .26rem;
+        position: relative;
+        a{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top:0;
+          left: 0;
+        }
+      }
+    }
+  }
+  .teachContent{
+    width: 7.1rem;
+    margin: 1rem auto 0;
+    .title{
+      font-size: .44rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: .02rem;
+      color: #fff;
+    }
+    .teachImg{
+      width: 100%;
+      display: block;
+      margin-top: .15rem;
+      border-radius: .18rem;
+    }
+
+  }
+  .friendGoods{
+    margin-top: .6rem;
+    margin-bottom: .2rem;
+    .bigTitle{
+      font-size: .44rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: .02rem;
+      color: #fff;
+    }
+    .smallTitle{
+      font-size: .32rem;
+      text-align: center;
+      letter-spacing: .02rem;
+      color: #fff;
+      margin-top: .1rem;
+    }
+    .chatBox{
+      width: 7.1rem;
+      margin: .3rem auto 0;
+      border-radius: .2rem;
+      padding: .3rem 0 .2rem 0;
+      background-color: rgba(244,244,244,0.4);
+      
+      .chatImg{
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+        margin: 0 auto;
+      }
+      .name{
+        font-size: .34rem;
+        color: rgba(255,255,255,1);
+        margin-top: .2rem;
+        text-align: center;
+      }
+      .joinChat{
+        width: 2rem;
+        height: .8rem;
+        border-radius: .3rem;
+        line-height: .8rem;
+        text-align: center;
+        color: #fff;
+        letter-spacing: .03rem;
+        background-color: #f13564;
+        font-size: .34rem;
+        margin:.2rem auto 0;
+        // font-weight: 600;
+        position: relative;
+        a{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top:0;
+          left: 0;
+        }
+      }
+    }
+  }
+  
+}

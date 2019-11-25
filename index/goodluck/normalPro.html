@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>常见问题</title>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        window.onresize = function (){
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+</head>
+<body>
+    <div class="normal_problems">
+        <div class="problemItem marTop20">
+            <p class="title title1">1 我们的联系方式</p>
+            <div class="content content1">
+                <p class="text">我们的微博：https://weibo.com/quzhuanba(趣赚吧)</p>
+                <p class="text">我们的邮箱：quzhuanba@gmail.com</p>
+            </div>
+        </div> 
+        <div class="problemItem">
+            <p class="title title2">2 趣赚吧是骗人的吗？</p>
+            <div class="content content2">
+                <p class="text">趣赚吧是一款完全免费的软件，没有应用内购买和恶意扣费，绝不向用户收取任何费用。</p>
+            </div>
+        </div>
+        <div class="problemItem">
+            <p class="title title3">3 如何提现？</p>
+            <div class="content content3">
+                <p class="text">现金账户达到20.00元，在【钱包-我要提现】页就可以通过支付宝或微信进行提现。</p>
+            </div>
+        </div>
+        <div class="problemItem">
+            <p class="title title4">4 如何获得签到奖励？</p>
+            <div class="content content4">
+                <p class="text">每天刮完一张刮刮卡，弹出签到成功弹窗后表示今日签到已完成</p>
+                <p class="text">签到奖励：每日签到有相应的趣赚币奖励是趣赚吧给每一个用户的福利！7天为一周期，每天只要登录APP即可自动获得相应的趣赚币奖励，一个想起结束后将从第一天开始重新计算，每周的星期一会重置签到奖励。</p>
+            </div>
+        </div>
+        <div class="problemItem">
+            <p class="title title5">5 趣赚币可以用来干什么？</p>
+            <div class="content content5">
+                <p class="text">趣赚币是趣赚吧平台的虚拟币，可以在商城中兑换奖品！如果奖品卖完了，请不要担心！我们每天都会补充奖品，因此请继续查看奖品的剩余库存，或者继续积累你的趣赚币以获得价值更高的奖品。（目前只要存够430万趣赚币就可以在商城兑换6元支付宝现金）</p>
+            </div>
+        </div>
+    </div>
+    <div class="mode">
+        <img src="./img/loading.gif" alt="">
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    $(function(){
+        if(localStorage.getItem('normalPro')){
+            $('.mode').css({display:'none'})
+        } else {   
+            localStorage.setItem('normalPro','true')
+            setTimeout(()=>{
+                $('.mode').css({display:'none'})
+            },300)
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="x5-orientation" content="portrait">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title>戴欧妮-产品中心</title>
+		<link rel="stylesheet" type="text/css" href="css/index2.css" />
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="favicon.ico" rel="shortcut icon">
+	</head>
+	<body>
+ <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="page1">
+          <div class="header clear">
+            <img src="img/dionlyLogo.png" alt="" class="logo">
+            <span class="name">戴欧妮</span>
+            <span class="product">产品中心</span>
+          </div>
+          <div class="content">
+            <div class="product">
+              <div class="proItem">
+                <p class="title">璀璨婚戒</p>
+                <img src="img/2.jpg" alt="">
+              </div>
+              <div class="proItem">
+                <p class="title">GIA裸钻</p>
+                <img src="img/122.jpg" alt="">
+              </div>
+              <!-- <div class="proItem">
+                <p class="title">钻戒定制</p>
+                <img src="img/jietuo3.jpg" alt="">
+              </div> -->
+            </div>
+          </div>
+          <div class="buyZuanjie">立即购买</div>
+          <img src="img/redDown.png" class="down" alt="">
+        </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="page2">
+            <p class="big-title">
+              <img src="img/baologo.png" alt="" class="baologo">
+              <span>宝贝星</span>
+            </p>
+            <p class="page2-text text1">附近交友摇一摇新社交软件</p>
+            <div class="center-img"></div>
+            <div class="download-btn2 downloadBaobeixin">立即下载</div>
+            <img src="img/whiteDown.png" class="down" alt="">
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="page3">
+            <p class="big-title clear">
+              <img src="img/quzhuanLogo.png" alt="" class="quzhuanlogo">
+              <span>趣赚APP</span>
+            </p>
+            <p class="page3-text text1">动动手指就能赚钱的APP</p>
+            <div class="center-img">
+            </div>
+            <div class="download-btn2 downloadQuzhuan">立即下载</div>
+            <img src="img/up.png" alt=""  class="down">
+        </div>
+      </div>
+      <!-- <div class="swiper-slide">
+          <div class="page4">
+              <p class="big-title">邀请好友</p>
+              <p class="page4-text text1">邀请好友一起玩即可获取现金奖励</p>
+              <div class="center-img">
+              </div>
+              <div class="download-btn2">立即下载</div>
+              <img src="img/up.png" alt=""  class="down">
+          </div>
+      </div> -->
+    </div>
+  </div>     
+  </body>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+	<script>
+    $('.buyZuanjie').click(() => {
+      // 去戴欧妮珠宝
+      window.open('http://www.dionly.com')
+    })
+    $('.downloadQuzhuan').click(() => {
+      // 苹果包
+      if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+				alert('ios上架中~')
+			} else {
+        // 趣赚Android下载包
+        window.open('https://quzhuanba.oss-cn-hangzhou.aliyuncs.com/apk/%E8%B6%A3%E8%B5%9AAPP.apk')
+      }
+    })
+    $('.downloadBaobeixin').click(() => {
+      // 苹果包
+      if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+				alert('ios上架中~')
+			} else {
+      // 宝贝星Android下载包
+        window.open('https://dionly.oss-cn-shenzhen.aliyuncs.com/tmp/apk/bbx/app-official-release.apk')
+      }
+    })
+    $('.page1 ,.page2,.page3,.page4').height(window.innerHeight);
+		//适配初始化设计稿尺寸为750
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		$(window).resize(function() {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+		})
+		//自动热跟新
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>');
+  var obj={
+     //按钮
+      button:function(el,scale){
+        $(el).css({'transform':'translateX(-50%) scale('+scale+')'});
+      },
+      //大标题
+      bigtitle:function(el,distance,time,opacity){
+          $(el).css({'transition':'all ease '+time+'s',
+          'transform':'translateX('+distance+'px)','opacity':opacity})
+      },
+   } 
+    //初始化元素状态
+        obj.button('.page1 .download-btn1',1);
+        obj.button('.page2 .download-btn2,.page3 .download-btn2,.page4 .download-btn2',0.5);
+        obj.bigtitle('.page2 .big-title',-30,0.1,0);
+        obj.bigtitle('.page2-text',30,0.1,0);
+      // 第一页
+    function page1animate(){
+      //下载按钮
+      obj.button('.page1 .download-btn1',1);
+      obj.button('.page2 .download-btn2',0.5);
+      obj.bigtitle('.page2 .big-title',-30,0.1,0);
+      obj.bigtitle('.page2-text',30,0.1,0);
+    }
+// 第二页
+    function page2animate(){
+        obj.button('.page2 .download-btn2',1);
+        obj.button('.page1 .download-btn1,.page3 .download-btn2',0.5);
+        obj.bigtitle('.page2 .big-title',0,1,1);
+        obj.bigtitle('.page3 .big-title',-30,0.1,0);
+         // 小标题
+        obj.bigtitle('.page3-text',30,0.1,0);
+        obj.bigtitle('.page2-text',0,1,1);
+        // 聊天对话
+        obj.bigtitle('.msg1',35,0.1,0);
+        obj.bigtitle('.msg2',-35,0.1,0);
+    }
+// 第三页
+    function page3animate(){
+            //下载按钮
+      obj.button('.page4 .download-btn2,.page2 .download-btn2',0.5)
+      obj.button('.page3 .download-btn2',1)
+      // 大标题
+      obj.bigtitle('.page2 .big-title,.page4 .big-title',-30,0.1,0);
+      obj.bigtitle('.page3 .big-title',0,1,1);
+      // 小标题
+      obj.bigtitle('.page3-text',0,1,1);
+      obj.bigtitle('.page2-text,.page4-text',30,0.1,0);
+        //聊天对话
+        setTimeout(function(){
+        obj.bigtitle('.msg1',0,1.5,1);
+          setTimeout(function(){
+            obj.bigtitle('.msg2',0,1.5,1);
+          },700)
+        },700)
+        obj.bigtitle('.msg3',35,0.1,0);
+        obj.bigtitle('.msg4',-35,0.1,0);
+    }
+  //第四页 
+    function page4animate(){
+      obj.button('.page3 .download-btn2',0.5);
+      obj.button('.page4 .download-btn2',1)
+       // 大标题
+      obj.bigtitle('.page3 .big-title',-30,0.1,0);
+      obj.bigtitle('.page4 .big-title',0,1,1);
+      obj.bigtitle('.page3-text',30,0.1,0);
+      obj.bigtitle('.page4-text',0,1,1);
+      // 聊天对话
+      obj.bigtitle('.msg1',35,0.1,0);
+      obj.bigtitle('.msg2',-35,0.1,0);
+      setTimeout(function(){
+      obj.bigtitle('.msg3',0,1.5,1);
+      setTimeout(function(){
+          obj.bigtitle('.msg4',0,1.5,1);
+        },700)
+      },700)
+    }
+    //初始化轮播属性
+    var mySwiper = new Swiper('.swiper-container', {
+        speed: 400,
+        height: window.innerHeight,
+        direction:'vertical',
+        preventClicks:true,//防止在滑动过程中意外不必要的链接点击
+        onSetTransition:function(swiper){
+          console.log(swiper.activeIndex);
+          // 调用动画函数
+          if(swiper.activeIndex == 0){
+            page1animate();
+          }
+          if(swiper.activeIndex == 1){
+            page2animate();
+          }
+          if(swiper.activeIndex == 2){
+            page3animate();
+          }
+          if(swiper.activeIndex == 3){
+            page4animate();
+          }
+        }
+    }); 
+	</script>
+</html>

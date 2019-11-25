@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        window.onresize = function (){
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="goodsInfo">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">   
+                    <div class="swiper-slide" >
+                        <img :src="goodsInfo.images" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination count"></div>
+            </div>
+            <div class="infoHeader">
+                <p class="name">{{goodsInfo.title}}</p>
+                <p class="price">{{goodsInfo.Amount}} <span>趣赚币</span></p>
+                <p class="tranPrice">运费0元</p>
+            </div>
+            <div class="infoBody">
+                <div class="top">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mode">
+        <img src="./img/loading.gif" alt="">
+    </div>
+</body>
+<script src="./js/vue.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            goodsInfo : {
+            }
+        },
+        methods: {
+        },
+        mounted() {      
+            var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'fraction'
+                }
+            })
+            // 请求接口
+            // var href = 'http://quzhuanba.taolai.com/h5/goodsInfo.html?product_id=1'
+            var href = window.location.href
+            var id = href.split('=')[1]
+            var token = "61ae4cbda274f7d7141c8531f5393fbc"
+            console.log(id)
+            $.ajax({
+                url:'http://quzhuanba.taolai.com/v1/member/products-detail',
+                // url:'http://api.komavideo.com/news/list',
+                method:'post',
+                data:JSON.stringify({
+                    "token": token,
+                    "product_id":id
+                }),
+                success:(res) => {
+                    console.log(res.data)
+                    this.goodsInfo = res.data
+                    $('.infoBody .top').append(res.data.content)
+                    $('head title').text(res.data.title)
+
+                    $('.infoBody .top p').eq(0).addClass('info')
+                    $('.infoBody .top ul:has(li)').addClass('ulBox')
+                    $('.infoBody .top ul li').addClass('item')
+                    $('.infoBody .top p:has(img)').addClass('imgBox')
+                    $('.infoBody .top p').find('img').addClass('imgItem')
+                    // console.log($('.infoBody .top p').eq(2).find('img').length)
+                    $('.infoBody .top p:has(br)').css({height:'0'})
+                }
+            })
+        },
+    });
+    //适配初始化设计稿尺寸为750
+    $(function(){
+        if(localStorage.getItem('goodsInfo')){
+            $('.mode').css({display:'none'})
+        } else {   
+            localStorage.setItem('goodsInfo','true')
+            setTimeout(()=>{
+                $('.mode').css({display:'none'})
+            },300)
+        }
+    })
+</script>
+</html>

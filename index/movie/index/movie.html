@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>首页</title>
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        window.onresize = function (){
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        }
+    </script>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+</head>
+<body>
+    <div id="app">
+        <div class="movieIndexPage">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">   
+                    <div class="swiper-slide">
+                        <img src="./img/poster1.png" alt="">
+                        <img src="./img/play.png" alt="" class="play">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/poster2.png" alt="">
+                        <img src="./img/play.png" alt="" class="play">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/poster3.png" alt="">
+                        <img src="./img/play.png" alt="" class="play">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/poster4.png" alt="">
+                        <img src="./img/play.png" alt="" class="play">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="recommend">
+                <div class="header clear">
+                    <img  src="./img/recommend.png" alt="">
+                    <span class="title">为您推荐</span>
+                </div>
+                <div class="recMovieList clear">
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src='./img/movie1.png' alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">快把我哥带走</span>
+                    </div>
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src='./img/movie1.png' alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">快把我哥带走</span>
+                    </div>
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src='./img/movie1.png' alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">快把我哥带走</span>
+                    </div>   
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src='./img/movie1.png' alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">快把我哥带走</span>
+                    </div> 
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src='./img/movie1.png' alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">快把我哥带走</span>
+                    </div>
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src='./img/movie1.png' alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">快把我哥带走</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hotPlay">
+                <div class="header clear">
+                    <img src="./img/hot.png" alt="">
+                    <span class="title">热播榜</span>
+                </div>
+                <div class="hotMovieList clear">
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src="./img/hotMovie1.png"  alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">夏日友人帐</span>
+                    </div>
+                    <div class="movieItem">
+                        <div class="imgBox">
+                            <img  src="./img/hotMovie2.png"  alt="" class="movieImg">
+                        </div>
+                        <span class="movieName nw1">夏日友人帐</span>
+                    </div>               
+                </div>
+            </div>
+            <div class="copyright">
+                版权归####所有，侵权必究
+                <img src="./img/erweima.png" alt="" class="erweima">
+            </div>
+        </div>
+        <div class="box">
+            <div class="download">
+                <img src="./img/download.png" alt="" class="downloadImg">
+                <p class="downloadText">立即下载</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination'
+        },
+        autoplay: true,
+        loop: true
+    })
+</script>
+</html>

@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.outer_container {
+  width: 100vw;
+  padding: 0.3rem 0.3rem 0;
+  box-sizing: border-box;
+}
+.outer_container .bigTitle {
+  font-size: 0.43rem;
+  font-weight: 600;
+  color: #518cc0;
+}
+.outer_container .title1 {
+  border-bottom: 2px solid #4e4c4c;
+  text-align: left !important;
+  margin: 0.1rem 0 1rem 0;
+  padding-bottom: 0.1rem;
+}
+.outer_container .smalltitle {
+  font-size: 0.37rem;
+  color: #333333;
+  font-weight: 700;
+}
+.outer_container .title2 {
+  margin: 0.8rem 0 0.3rem 0;
+}
+.outer_container .title3 {
+  margin-top: 0.3rem;
+}
+.outer_container img {
+  width: 100%;
+  display: block;
+  margin: 0.2rem auto 0;
+}

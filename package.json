@@ -4,16 +4,16 @@
   "description": "demo",
   "main": "index.js",
   "scripts": {
-    "start": "npm run client ",
+    "start": "npm run dev ",
     "eslint": "eslint *.js",
     "test": "npm run test",
     "build": "node build.js",
     "install": "node-gyp rebuild",
     "cover:open": "scripty",
-    "client": "npm-run-all --parallel client:*",
-    "client:reload-server": "livereload index/",
-    "client:static-server": "http-server index/",
-    "client:static-lessreload": "node ./index.js"
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:reload-server": "livereload index/",
+    "dev:static-server": "http-server index/",
+    "dev:static-lessreload": "node ./index.js"
   },
   "repository": {
     "type": "git",
